@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>Temperature Conerter</title>
+    <style>
+      body {
+        height: 100vh;
+        background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        height: 300px;
+        width: 250px;
+        border-radius: 20px;
+      }
+      h3 {
+        font-family: Helvetica;
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 19px;
+      }
+      input {
+        height: 40px;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px 3px gray;
+        font-weight: bold;
+      }
+      select {
+        height: 40px;
+        padding: 10px;
+        padding-right: 20px;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 1px 1px 10px 3px gray;
+        font-weight: bold;
+      }
+      button {
+        height: 40px;
+        padding: 10px;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 30px;
+        margin-top: 10px;
+        box-shadow: 1px 1px 7px 3px #6ef1fa;
+        background-color: rgba(18, 181, 18, 0.861);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>TEMPERATURE CONVERTER</h3>
+      <form>
+        <input type="number" id="temp" placeholder="Enter Temperature" />
+        <select id="temptype">
+          <option value="c">Celsius</option>
+          <option value="f">Fahrenheit</option>
+          <option value="f">kelvin</option>
+          </select
+        ><br />
+        <br />
+        <button type="button" onclick="conv()">CALCULATE</button>
+      </form>
+      <p id="result"></p>
+    </div>
+    <script>
+      function conv() {
+        var temp = document.getElementById("temp").value;
+        var temptype = document.getElementById("temptype").value;
+        temp = parseFloat(temp);
+        var result;
+        if (temptype == "c") {
+          result = (temp * 9) / 5 + 32;
+          console.log(result);
+          document.getElementById("result").textContent = result + "F";
+        } else if (temptype == "f") {
+          result = ((temp - 32) * 5) / 9;
+          console.log(result);
+          document.getElementById("result").textContent = result + "C";
+        }else if (temptype == 'k') {
+          result = tem- 273.15;
+          console.log(result);
+          document.getElementById("result").textContent = result + "k";
+        }
+      }
+    </script>
+  </body>
+</html>
